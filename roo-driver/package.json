@@ -1,0 +1,44 @@
+{
+  "name": "roo-driver",
+  "displayName": "Roo Driver",
+  "description": "Headless driver for Roo Code via commands and URI handlers (ideal for RL/xvfb)",
+  "version": "0.0.1",
+  "publisher": "rl",
+  "license": "MIT",
+  "engines": {
+    "vscode": "^1.90.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "main": "./dist/extension.js",
+  "activationEvents": [
+    "onCommand:rooDriver.startTask",
+    "onCommand:rooDriver.sendMessage",
+    "onUri"
+  ],
+  "contributes": {
+    "commands": [
+      {
+        "command": "rooDriver.startTask",
+        "title": "Roo Driver: Start Task"
+      },
+      {
+        "command": "rooDriver.sendMessage",
+        "title": "Roo Driver: Send Message"
+      }
+    ]
+  },
+  "scripts": {
+    "compile": "tsc -p .",
+    "watch": "tsc -w -p ."
+  },
+  "dependencies": {
+    "@roo-code/types": "latest"
+  },
+  "devDependencies": {
+    "@types/node": "^20.12.7",
+    "@types/vscode": "^1.90.0",
+    "typescript": "^5.4.5"
+  }
+}
